@@ -1,0 +1,6 @@
+*.substvars
+*debhelper*
+.debhelper
+composer
+files
+tmp
