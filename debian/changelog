@@ -1,0 +1,5 @@
+composer (100:2.5.2-1) UNRELEASED; urgency=medium
+
+  * https://github.com/composer/composer/releases/tag/2.5.2
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Sat, 04 Feb 2023 22:20:38 +0800
