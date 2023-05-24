@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+SHELL := /bin/bash
+
+override_dh_auto_build:
+
+override_dh_auto_install:
+	install -Dpm755 -d debian/tmp/etc/profile.d
+	install -Dpm755 -d debian/tmp/usr/bin
+	install -Dpm755 -d debian/tmp/usr/share/php/vendor
+	install -Dpm755 -t debian/tmp/etc/profile.d etc/profile.d/composer.sh
+	cp -rfT vendor debian/tmp/usr/share/php/vendor
+	pushd debian/tmp/usr/bin && \
+		ln -fs /usr/share/php/vendor/composer/bin/composer composer && \
+		popd
+	chmod a+x debian/tmp/usr/share/php/vendor/composer/bin/composer
+	fdupes -qnrps debian/tmp/usr/share/php/vendor
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod a+x debian/composer/usr/share/php/vendor/composer/bin/composer
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+
+%:
+	dh $@	
