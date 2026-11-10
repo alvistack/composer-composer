@@ -1,0 +1,6 @@
+composer: copyright-without-copyright-notice
+composer: empty-binary-package
+composer: initial-upload-closes-no-bugs
+composer: no-manual-page
+composer: package-contains-vcs-control-file
+composer: zero-byte-file-in-doc-directory
